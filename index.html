@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Valentine's Day Card</title>
+        <link rel='stylesheet'
+                href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap">
+        <style>
+                body {
+                        height: 100vh;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+
+  background-size: 1000px;
+  background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
+  background-position: center center;
+                }
+
+                .paper {
+                        background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
+                        background-size: 500px;
+                        padding: 20px 100px;
+                        transform: rotateZ(-5deg);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                        border-radius: 2px;
+                        position: absolute;
+                        cursor: move;
+                        touch-action: none;
+                        user-select: none;
+                        -webkit-user-select: none;
+                        max-width: 90vw;
+                        box-sizing: border-box;
+                }
+
+                .paper.heart {
+                        position: relative;
+                        width: 600px;
+                        height: 500px;
+                        padding: 0;
+                        
+                }
+
+                .p1 {
+                        margin-left: 20px;
+                        margin-top: 40px;
+                        font-family: 'Zeyada';
+                        font-size: 50px;
+                        color: rgb(0, 0, 100);
+                        opacity: 0.75;
+                        user-select: none;
+                        filter: drop-shadow(2px 1.5px 1px rgba(0, 0, 105, 0.9));
+                }
+
+                .p2 {
+                        margin-left: 20px;
+                        margin-top: 40px;
+                        font-family: 'Zeyada';
+                        font-size: 50px;
+                        color: rgb(0, 0, 100);
+                        opacity: 0.75;
+                        user-select: none;
+                        filter: drop-shadow(2px 1.5px 1px rgba(0, 0, 105, 0.9));
+                }
+
+                .p3 {
+                        margin-left: 20px;
+                        margin-top: 40px;
+                        font-family: 'Zeyada';
+                        font-size: 50px;
+                        color: rgb(0, 0, 100);
+                        opacity: 0.75;
+                        user-select: none;
+                        filter: drop-shadow(2px 1.5px 1px rgba(0, 0, 105, 0.9));
+                }
+
+                .button-container {
+                        display: flex;
+                        justify-content: center;
+                        gap: clamp(10px, 3vw, 20px);
+                        margin-top: 20px;
+                }
+
+                .yes-button,
+                .no-button {
+                        padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 20px);
+                        font-family: 'Short Stack', cursive;
+                        font-size: clamp(14px, 3.5vw, 16px);
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: transform 0.2s;
+                        touch-action: manipulation;
+                }
+
+                .yes-button {
+                        background-color: rgb(0, 0, 100);
+                        color: white;
+                }
+
+                .no-button {
+                        background-color: #ffffff;
+                        color:  rgb(0, 0, 100);
+                        border-color: rgb(0, 0, 100) ;
+                }
+
+                .yes-button:hover,
+                .no-button:hover {
+                        transform: scale(1.1);
+                }
+
+                @media (hover: none) {
+
+                        .yes-button:hover,
+                        .no-button:hover {
+                                transform: none;
+                        }
+                }
+
+                .yes-button:active,
+                .no-button:active {
+                        transform: scale(0.95);
+                }
+
+                .paper.red {
+                        background-color: #fee2e2;
+                }
+
+                .paper.image {
+                        max-width: min(300px, 90vw);
+                }
+
+                .paper.image img {
+                        max-height: 400px;
+                        width: 100%;
+                        user-select: none;
+                }
+
+                .paper.heart img { 
+                        margin-top: -50px;
+                        margin-left: 100px;
+                        max-height: 200px;
+                        width: 50%;
+                        user-select: none;
+                }
+        </style>
+</head>
+
+<body>
+        <div class="paper heart">
+                <p class="p1">Do you love me and wanna go on date with me?</p>
+                <img src="images/heart.webp" alt="placeholder" />
+                <div class="button-container">
+                        <button class="yes-button">Yes</button>
+                        <button class="no-button">No</button>
+                </div>
+        </div>
+
+        <div class="paper image">
+                <p class="p3">and I fallen in</p>
+                <p class="p3">Love with You 😍</p>
+                <img src="images/11.jpg" alt="placeholder" />
+        </div>
+
+        <div class="paper image">
+                <p class="p3">How can be</p>
+                <p class="p3">someone so cute ❤️</p>
+                <img src="images/2.jpg" alt="placeholder" />
+        </div>
+
+        <div class="paper red">
+                <p class="p1">and U have become My Favorite</p>
+                <p class="p2">Person 😍</p>
+        </div>
+
+        <div class="paper">
+                <p class="p1">You are Cute</p>
+                <p class="p1">Amazing <span style="color: red !important;">❤️</span></p>
+        </div>
+
+        <div class="paper">
+                <p class="p1">Drag the papers to move!</p>
+        </div>
+
+        <script>
+                let highestZ = 1;
+
+                const whatsappNumber = "+917498121094";
+                const emailAddress = "aayushghutke@gmail.com";
+
+                function sendWhatsAppMessage(message) {
+                        const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+                        window.open(whatsappUrl, '_blank');
+                }
+
+                document.querySelector('.yes-button').addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent drag start
+                        sendWhatsAppMessage("Yes! I would love to go on a date with you ❤️");
+                });
+
+                document.querySelector('.no-button').addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent drag start
+                        alert("Oh no! Maybe next time 😢");
+                });
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                        
+                        // let whatsappUrl;
+                        // if (isMobile) {
+                        //         whatsappUrl = `whatsapp://send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+                        // } else {
+                        //         whatsappUrl = `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+                        // }
+
+                        // window.open(whatsappUrl, '_blank');
+
+
+                class Paper {
+                        constructor(paper) {
+                                this.paper = paper;
+                                this.holding = false;
+                                this.touchIdentifier = null;
+                                this.startX = 0;
+                                this.startY = 0;
+                                this.currentX = 0;
+                                this.currentY = 0;
+                                this.prevX = 0;
+                                this.prevY = 0;
+                                this.velX = 0;
+                                this.velY = 0;
+                                this.rotation = Math.random() * 30 - 15;
+
+                                this.init();
+                        }
+
+                        init() {
+                                // Mouse events
+                                this.paper.addEventListener('mousedown', (e) => this.onStart(e));
+                                document.addEventListener('mousemove', (e) => this.onMove(e));
+                                document.addEventListener('mouseup', () => this.onEnd());
+
+                                // Touch events
+                                this.paper.addEventListener('touchstart', (e) => this.onStart(e));
+                                document.addEventListener('touchmove', (e) => this.onMove(e));
+                                document.addEventListener('touchend', (e) => this.onEnd(e));
+                                document.addEventListener('touchcancel', (e) => this.onEnd(e));
+
+                                // Prevent context menu
+                                this.paper.addEventListener('contextmenu', (e) => e.preventDefault());
+                        }
+
+                        onStart(e) {
+                                if (this.holding) return;
+
+                                this.holding = true;
+                                this.paper.style.zIndex = ++highestZ;
+
+                                if (e.type === 'touchstart') {
+                                        e.preventDefault();
+                                        const touch = e.touches[0];
+                                        this.touchIdentifier = touch.identifier;
+                                        this.startX = touch.clientX;
+                                        this.startY = touch.clientY;
+                                } else {
+                                        this.startX = e.clientX;
+                                        this.startY = e.clientY;
+                                }
+
+                                this.prevX = this.startX;
+                                this.prevY = this.startY;
+                        }
+
+                        onMove(e) {
+                                if (!this.holding) return;
+
+                                let clientX, clientY;
+
+                                if (e.type === 'touchmove') {
+                                        e.preventDefault();
+                                        const touch = Array.from(e.touches).find(t => t.identifier === this.touchIdentifier);
+                                        if (!touch) return;
+                                        clientX = touch.clientX;
+                                        clientY = touch.clientY;
+                                } else {
+                                        clientX = e.clientX;
+                                        clientY = e.clientY;
+                                }
+
+                                this.velX = clientX - this.prevX;
+                                this.velY = clientY - this.prevY;
+
+                                this.currentX += this.velX;
+                                this.currentY += this.velY;
+
+                                this.prevX = clientX;
+                                this.prevY = clientY;
+
+                                this.paper.style.transform = `translateX(${this.currentX}px) translateY(${this.currentY}px) rotateZ(${this.rotation}deg)`;
+                        }
+
+                        onEnd(e) {
+                                if (e && e.type === 'touchend') {
+                                        const touch = Array.from(e.changedTouches).find(t => t.identifier === this.touchIdentifier);
+                                        if (!touch) return;
+                                }
+
+                                this.holding = false;
+                                this.touchIdentifier = null;
+                        }
+                }
+
+                // Initialize all papers
+                document.querySelectorAll('.paper').forEach(paper => {
+                        new Paper(paper);
+                });
+        </script>
+</body>
+
+</html>
